@@ -6,14 +6,15 @@ Version 1.0.0
   <summary>Table des matières</summary>
   <ol>
     <li><a href="#Présentation">Présentation</a></li>
+    <li><a href="#Import-SGBD">Import SGBD</a></ul>
+    </li>
     <li>
-        <a href="#Import-SGBD">Import SGBD</a>
+        <a href="#Version">Version</a>
         <ul>
-            <li><a href="#Avec-docker-compose">Avec docker compose</a></li>
-            <li><a href="#En-ligne-de-commande">En ligne de commande</a></li>
+            <li><a href="#Modifier-les-versions">Modifier les versions</a></li>
+            <li><a href="#Dernière-version">Dernière version</a></li>
         </ul>
     </li>
-    <li><a href="#Test-version">Test version</a></li>
     <li><a href="#Docker-hub">Docker hub</a></li>
   </ol>
 </details>
@@ -38,17 +39,32 @@ Pour importer les bases de données :
 
 Créer un dossier « config/data » dans votre projet.
 
-### Avec docker compose
-
-Dans le fichier « docker-compose.yml » :
+Dans un fichier « docker-compose.yml » :
 ```
 volumes:
     - ./config/data:/docker-entrypoint-initdata.d:rw
 ```
 
-### En ligne de commande
+## Version
+
+### Modifier les versions
+
+Dans un fichier « docker-compose.yml » :
+
 ```
-$ docker run -v `pwd`/config/data:/docker-entrypoint-initdata -p 27017:27017 Dockerfile
+args:
+    - VALUE_MONGO_VERSION=7.0.9
+```
+
+### Dernière version
+
+Pour installer la dernière version à partir du fichier :
+
+Dans un fichier « docker-compose.yml » :
+
+```
+args:
+    - VALUE_MONGO_VERSION=latest
 ```
 
 ## Docker hub
