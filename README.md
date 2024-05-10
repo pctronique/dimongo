@@ -9,7 +9,7 @@ Version 1.0.0
     <li>
         <a href="#Import-SGBD">Import SGBD</a>
         <ul>
-            <li><a href="#Avec-docker-compose.yml">Avec docker-compose.yml</a></li>
+            <li><a href="#Avec-docker-compose">Avec docker compose</a></li>
             <li><a href="#En-ligne-de-commande">Le fichier .env</a></li>
         </ul>
     </li>
@@ -38,7 +38,9 @@ Pour importer les bases de données :
 
 Créer un dossier « config/data » dans votre projet.
 
-### Avec docker-compose.yml
+### Avec docker compose
+
+Dans le fichier « docker-compose.yml » :
 ```
 volumes:
     - ./config/data:/docker-entrypoint-initdata.d:rw
