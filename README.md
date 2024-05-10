@@ -6,7 +6,13 @@ Version 1.0.0
   <summary>Table des matières</summary>
   <ol>
     <li><a href="#Présentation">Présentation</a></li>
-    <li><a href="#Import-SGBD">Import SGBD</a></li>
+    <li>
+        <a href="#Import-SGBD">Import SGBD</a>
+        <ul>
+            <li><a href="#Avec-docker-compose-yml">Avec docker-compose.yml</a></li>
+            <li><a href="#En-ligne-de-commande">Le fichier .env</a></li>
+        </ul>
+    </li>
     <li><a href="#Test-version">Test version</a></li>
     <li><a href="#Docker-hub">Docker hub</a></li>
   </ol>
@@ -30,20 +36,17 @@ La version :
 
 Pour importer les bases de données :
 
-Le faire a partir d'un fichier « docker-compose.yml » :
+Créer un dossier « config/data » dans votre projet.
+
+### Avec docker-compose.yml
 ```
 volumes:
     - ./config/data:/docker-entrypoint-initdata.d:rw
 ```
 
-<ul>
-  <li>Faire une exportation de la base sous format json.</li>
-  <li>Placer les fichiers json dans le dossier « config/data » de votre projet.</li>
-</ul>
-
-Sans le fichier, en ligne de commande :
+### En ligne de commande
 ```
-docker run -v `pwd`/config/data:/docker-entrypoint-initdata -p 27017:27017 Dockerfile
+$ docker run -v `pwd`/config/data:/docker-entrypoint-initdata -p 27017:27017 Dockerfile
 ```
 
 ## Docker hub
