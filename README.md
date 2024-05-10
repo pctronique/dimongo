@@ -37,7 +37,7 @@ La version :
 
 Pour importer les bases de données :
 
-Créer un dossier « config/data » dans votre projet.
+Créer un dossier « config/data » (par exemple) dans votre projet.
 
 Dans un fichier « docker-compose.yml » :
 ```
