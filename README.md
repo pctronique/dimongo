@@ -10,7 +10,7 @@ Version 1.0.0
         <a href="#Import-SGBD">Import SGBD</a>
         <ul>
             <li><a href="#Avec-docker-compose">Avec docker compose</a></li>
-            <li><a href="#En-ligne-de-commande">Le fichier .env</a></li>
+            <li><a href="#En-ligne-de-commande">En ligne de commande</a></li>
         </ul>
     </li>
     <li><a href="#Test-version">Test version</a></li>
