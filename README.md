@@ -45,6 +45,8 @@ volumes:
     - ./config/data:/docker-entrypoint-initdata.d:rw
 ```
 
+Placer dans le dossier des fichiers json (SGBD).
+
 ## Version
 
 ### Modifier les versions
